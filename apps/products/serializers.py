@@ -17,3 +17,11 @@ class ProductListSerializer(serializers.ModelSerializer):
         model = Product
         fields = ("id", "name", "image", "category",
                   "price", "currency")
+
+
+class ProductDetailSerializer(serializers.ModelSerializer):
+    image = ImageSerializer(many=True)
+
+    class Meta:
+        model = Product
+        fields = '__all__'

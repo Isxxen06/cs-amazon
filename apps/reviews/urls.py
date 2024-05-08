@@ -1,10 +1,10 @@
 from rest_framework import routers
-from .views import CategoryAPIViewSet
+from .views import ReviewAPIViewSet
 
 router = routers.DefaultRouter()
 router.register(
     "reviews",
-    CategoryAPIViewSet
+    ReviewAPIViewSet
 )
 
 urlpatterns = router.urls

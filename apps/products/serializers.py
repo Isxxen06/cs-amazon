@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from .models import Product
 from apps.images.serializers import ImageSerializer
+from apps.reviews.serializers import ReviewSerializer
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -21,6 +22,7 @@ class ProductListSerializer(serializers.ModelSerializer):
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     image = ImageSerializer(many=True)
+    product_review = ReviewSerializer(many=True)
 
     class Meta:
         model = Product
